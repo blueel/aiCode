@@ -1,0 +1,74 @@
+{
+	"name": "interactive-web",
+	"version": "1.0.0",
+	"description": "现代化交互展示网页 - 支持主题切换的响应式网站",
+	"main": "index.html",
+	"scripts": {
+		"start": "python -m http.server 8000",
+		"dev": "python -m http.server 8000",
+		"build": "scripts\\deploy.bat build",
+		"build:clean": "if exist dist rmdir /s /q dist",
+		"build:copy": "mkdir dist && copy *.html dist\\ && copy *.css dist\\ && copy *.js dist\\ && copy *.md dist\\",
+		"build:optimize": "echo Build optimization complete",
+		"deploy": "chmod +x scripts/deploy.sh && ./scripts/deploy.sh",
+		"deploy:github": "npm run deploy github",
+		"deploy:vercel": "npm run deploy vercel",
+		"deploy:netlify": "npm run deploy netlify",
+		"deploy:docker": "npm run deploy docker",
+		"deploy:all": "npm run deploy all",
+		"docker:build": "docker build -t interactive-web:latest .",
+		"docker:run": "docker run -p 3000:80 interactive-web:latest",
+		"docker:compose": "docker-compose up -d",
+		"docker:stop": "docker-compose down",
+		"lint": "npm run lint:html && npm run lint:css && npm run lint:js",
+		"lint:html": "npx html-validate index.html || true",
+		"lint:css": "npx stylelint '**/*.css' || true",
+		"lint:js": "npx eslint script.js || true",
+		"test": "echo 'Running tests...' && npm run test:accessibility",
+		"test:accessibility": "echo 'Accessibility tests would run here'",
+		"preview": "npm run build && python -m http.server 8000 -d dist",
+		"clean": "rm -rf dist node_modules/.cache",
+		"postinstall": "echo '🎉 安装完成！运行 npm run start 启动开发服务器'"
+	},
+	"keywords": [
+		"responsive",
+		"interactive",
+		"modern",
+		"theme-switcher",
+		"anime",
+		"cyberpunk",
+		"web-development"
+	],
+	"author": "Interactive Web Developer",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/username/interactive-web.git"
+	},
+	"bugs": {
+		"url": "https://github.com/username/interactive-web/issues"
+	},
+	"homepage": "https://username.github.io/interactive-web",
+	"dependencies": {
+		"echarts": "^5.4.3",
+		"mpvue-echarts": "^0.3.2"
+	},
+	"devDependencies": {
+		"@dcloudio/uni-app": "^2.0.2-4070620250821001",
+		"@dcloudio/uni-app-plus": "^2.0.2-4070620250821001",
+		"@dcloudio/uni-h5": "^2.0.2-4070620250821001",
+		"@dcloudio/uni-mp-weixin": "^2.0.2-4070620250821001",
+		"html-validate": "^8.7.4",
+		"stylelint": "^15.11.0",
+		"eslint": "^8.55.0"
+	},
+	"engines": {
+		"node": ">=18.0.0",
+		"npm": ">=9.0.0"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	]
+}

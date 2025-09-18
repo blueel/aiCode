@@ -1,0 +1,67 @@
+# 🐳 Docker Compose 配置文件
+# 用于本地开发和测试
+
+version: '3.8'
+
+services:
+  # Web 应用服务
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: interactive-web
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+      - TZ=Asia/Shanghai
+    volumes:
+      # 开发模式挂载源代码
+      - ./dist:/usr/share/nginx/html:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - web-network
+
+  # Nginx 反向代理（可选）
+  nginx-proxy:
+    image: nginx:alpine
+    container_name: nginx-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx-proxy.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - web
+    restart: unless-stopped
+    networks:
+      - web-network
+
+  # 监控服务（可选）
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_POLL_INTERVAL=300
+    restart: unless-stopped
+    networks:
+      - web-network
+
+networks:
+  web-network:
+    driver: bridge
+
+volumes:
+  ssl-certs:
+    driver: local

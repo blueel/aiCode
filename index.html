@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>现代化交互展示 - 响应式网页</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>InteractiveWeb</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">首页</a>
+                <a href="#features" class="nav-link">功能</a>
+                <a href="#gallery" class="nav-link">画廊</a>
+                <a href="#contact" class="nav-link">联系</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+        
+        <!-- 主题切换器 -->
+        <div class="theme-switcher">
+            <div class="theme-toggle" id="theme-toggle">
+                <div class="theme-icon anime-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <div class="theme-icon cyberpunk-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <div class="theme-slider"></div>
+            </div>
+            <div class="theme-label">
+                <span class="current-theme">动漫风格</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容 -->
+    <main>
+        <!-- 英雄区域 -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="text-gradient">现代化</span>
+                        <br>交互体验
+                    </h1>
+                    <p class="hero-description">
+                        探索前沿的网页交互技术，体验流畅的动画效果和响应式设计
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="scrollToSection('features')">
+                            <i class="fas fa-play"></i>
+                            开始探索
+                        </button>
+                        <button class="btn btn-secondary" onclick="scrollToSection('gallery')">
+                            <i class="fas fa-images"></i>
+                            查看画廊
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card" data-delay="0">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span>移动优先</span>
+                    </div>
+                    <div class="floating-card" data-delay="200">
+                        <i class="fas fa-palette"></i>
+                        <span>美观设计</span>
+                    </div>
+                    <div class="floating-card" data-delay="400">
+                        <i class="fas fa-bolt"></i>
+                        <span>快速响应</span>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- 功能特性 -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">核心特性</h2>
+                    <p class="section-description">体验现代化的网页交互功能</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>响应式设计</h3>
+                        <p>完美适配各种设备尺寸，从手机到桌面电脑</p>
+                        <div class="feature-demo">
+                            <div class="device-mockup">
+                                <div class="device-screen"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3>流畅动画</h3>
+                        <p>精心设计的动画效果，提升用户体验</p>
+                        <div class="feature-demo">
+                            <div class="animation-demo">
+                                <div class="pulse-circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>现代UI</h3>
+                        <p>采用最新的设计趋势和最佳实践</p>
+                        <div class="feature-demo">
+                            <div class="color-palette">
+                                <div class="color-swatch" style="background: #667eea;"></div>
+                                <div class="color-swatch" style="background: #764ba2;"></div>
+                                <div class="color-swatch" style="background: #f093fb;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 交互画廊 -->
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">交互画廊</h2>
+                    <p class="section-description">体验各种交互效果和动画</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-category="hover">
+                        <div class="gallery-card">
+                            <div class="gallery-image">
+                                <div class="hover-effect">
+                                    <i class="fas fa-search-plus"></i>
+                                </div>
+                            </div>
+                            <div class="gallery-content">
+                                <h3>悬停效果</h3>
+                                <p>鼠标悬停时的精美动画</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="click">
+                        <div class="gallery-card">
+                            <div class="gallery-image">
+                                <div class="click-effect">
+                                    <i class="fas fa-hand-pointer"></i>
+                                </div>
+                            </div>
+                            <div class="gallery-content">
+                                <h3>点击交互</h3>
+                                <p>点击时的视觉反馈效果</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="scroll">
+                        <div class="gallery-card">
+                            <div class="gallery-image">
+                                <div class="scroll-effect">
+                                    <i class="fas fa-scroll"></i>
+                                </div>
+                            </div>
+                            <div class="gallery-content">
+                                <h3>滚动动画</h3>
+                                <p>页面滚动时的动态效果</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gallery-item" data-category="loading">
+                        <div class="gallery-card">
+                            <div class="gallery-image">
+                                <div class="loading-effect">
+                                    <div class="spinner"></div>
+                                </div>
+                            </div>
+                            <div class="gallery-content">
+                                <h3>加载动画</h3>
+                                <p>优雅的加载状态指示</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系区域 -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>联系我们</h2>
+                        <p>有任何问题或建议，欢迎与我们联系</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-envelope"></i>
+                                <span>contact@example.com</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <span>+86 123 4567 8900</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>北京市朝阳区</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form class="form">
+                            <div class="form-group">
+                                <input type="text" placeholder="您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="邮箱地址" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea placeholder="留言内容" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                发送消息
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>InteractiveWeb</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">首页</a>
+                    <a href="#features">功能</a>
+                    <a href="#gallery">画廊</a>
+                    <a href="#contact">联系</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 InteractiveWeb. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

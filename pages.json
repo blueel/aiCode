@@ -1,0 +1,148 @@
+"pages": [
+	{
+		"path": "pages/login/index",
+		"style": {
+			"navigationBarTitleText": "登录"
+		}
+	},
+	{
+		"path": "pages/goods/index",
+		"style": {
+			"navigationBarTitleText": "商品管理"
+		}
+	},
+	{
+		"path": "pages/goods/detail",
+		"style": {
+			"navigationBarTitleText": "商品详情"
+		}
+	},
+	{
+		"path": "pages/goods/edit",
+		"style": {
+			"navigationBarTitleText": "编辑商品"
+		}
+	},
+	{
+		"path": "pages/member/index",
+		"style": {
+			"navigationBarTitleText": "会员管理"
+		}
+	},
+	{
+		"path": "pages/member/edit",
+		"style": {
+			"navigationBarTitleText": "会员编辑"
+		}
+	},
+	{
+		"path": "pages/member/detail",
+		"style": {
+			"navigationBarTitleText": "会员详情"
+		}
+	},
+	{
+		"path": "pages/order/index",
+		"style": {
+			"navigationBarTitleText": "订单中心"
+		}
+	},
+	{
+		"path": "pages/order/report",
+		"style": {
+			"navigationBarTitleText": "订单报表"
+		}
+	},
+	{
+		"path": "pages/order/refund",
+		"style": {
+			"navigationBarTitleText": "销售退单审核"
+		}
+	},
+	{
+		"path": "pages/order/abnormal",
+		"style": {
+			"navigationBarTitleText": "异常订单"
+		}
+	},
+	{
+		"path": "pages/order/sales",
+		"style": {
+			"navigationBarTitleText": "销售订单"
+		}
+	},
+	{
+		"path": "pages/order/wxpay",
+		"style": {
+			"navigationBarTitleText": "微信支付订单"
+		}
+	},
+	{
+		"path": "pages/shop/index",
+		"style": {
+			"navigationBarTitleText": "店铺管理"
+		}
+	},
+	{
+		"path": "pages/shop/edit",
+		"style": {
+			"navigationBarTitleText": "店铺编辑"
+		}
+	},
+	{
+		"path": "pages/shop/detail",
+		"style": {
+			"navigationBarTitleText": "店铺详情"
+		}
+	},
+	{
+		"path": "pages/statistics/index",
+		"style": {
+			"navigationBarTitleText": "数据统计"
+		}
+	}
+],
+"globalStyle": {
+	"navigationBarTextStyle": "black",
+	"navigationBarTitleText": "商城管理系统",
+	"navigationBarBackgroundColor": "#F8F8F8",
+	"backgroundColor": "#F8F8F8"
+},
+"tabBar": {
+	"color": "#7A7E83",
+	"selectedColor": "#3cc51f",
+	"borderStyle": "black",
+	"backgroundColor": "#ffffff",
+	"list": [
+		{
+			"pagePath": "pages/goods/index",
+			"iconPath": "",
+			"selectedIconPath": "",
+			"text": "商品"
+		},
+		{
+			"pagePath": "pages/member/index",
+			"iconPath": "",
+			"selectedIconPath": "",
+			"text": "会员"
+		},
+		{
+			"pagePath": "pages/order/index",
+			"iconPath": "",
+			"selectedIconPath": "",
+			"text": "订单"
+		},
+		{
+			"pagePath": "pages/shop/index",
+			"iconPath": "",
+			"selectedIconPath": "",
+			"text": "店铺"
+		},
+		{
+			"pagePath": "pages/statistics/index",
+			"iconPath": "",
+			"selectedIconPath": "",
+			"text": "统计"
+		}
+	]
+}
